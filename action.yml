@@ -1,0 +1,46 @@
+name: "Kubernetes yaml validation"
+description: "Validate Kubernetes manifests by using Kubeval"
+author: "makocchi-git"
+inputs: 
+  files:
+    description: "Files or directories to validate (kubeval --directories)"
+    default: "."
+    required: false
+  version:
+    description: "Version of Kubernetes to validate against (kubeval --kubernetes-version)"
+    default: "master"
+    required: false
+  strict:
+    description: "Whether to not to check for extra properties (kubeval --strict)" 
+    default: true
+    required: false
+  openshift:
+    description: "Whether to use the schemas from OpenShift rather than Kubernetes (kubeval --openshift)" 
+    default: false
+    required: false
+  ignore_missing_schemas:
+    description: "Whether or not to skip custom resources (kubeval --ignore-missing-schemas)" 
+    default: true
+    required: false
+  comment:
+    description: "Send comment to pull requests"
+    default: true
+    required: false
+  token:
+    description: "Github token for api. This is required if comment is true"
+    default: ""
+    required: false
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.files }}
+    - ${{ inputs.version }}
+    - ${{ inputs.strict }}
+    - ${{ inputs.openshift }}
+    - ${{ inputs.ignore_missing_schemas }}
+    - ${{ inputs.comment }}
+    - ${{ inputs.token }}
+branding:
+  icon: "check"
+  color: "blue"
