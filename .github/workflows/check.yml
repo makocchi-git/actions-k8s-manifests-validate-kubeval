@@ -1,3 +1,5 @@
+name: Perform checks
+
 on: [push]
 
 jobs:
