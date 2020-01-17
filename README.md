@@ -1,5 +1,7 @@
 # Validate Kubernetes manifests
 
+[<img src="https://github.com/makocchi-git/actions-k8s-manifests-validate/workflows/Perform checks/badge.svg"/>](https://github.com/makocchi-git/actions-k8s-manifests-validate/actions)
+
 Validate [Kubernetes](https://github.com/kubernetes/kubernetes) manifests in your repository.  
 This action uses [Kubeval](https://kubeval.instrumenta.dev/) for validating.
 

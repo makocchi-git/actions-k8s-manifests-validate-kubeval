@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build docker image
+      run: |
+        docker build -t makocchi/actions-k8s-manifests-validate:${{ github.sha }} .
+    - name: Run check
+      run: |
+        docker run -v example:/example makocchi/actions-k8s-manifests-validate:${{ github.sha }} "/example" "master" "true" "false" "true" "false" ""
