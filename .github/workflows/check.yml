@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build docker image
       run: |
-        docker build -t makocchi/actions-k8s-manifests-validate:${{ github.sha }} .
+        docker build -t makocchi/actions-k8s-manifests-validate-kubeval:${{ github.sha }} .
     - name: Run check
       run: |
-        docker run -v example:/example makocchi/actions-k8s-manifests-validate:${{ github.sha }} "/example" "master" "true" "false" "true" "false" ""
+        docker run -v example:/example makocchi/actions-k8s-manifests-validate-kubeval:${{ github.sha }} "/example" "master" "true" "false" "true" "false" ""

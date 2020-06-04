@@ -1,4 +1,4 @@
-name: "Kubernetes yaml validation"
+name: "Kubernetes yaml validation by kubeval"
 description: "Validate Kubernetes manifests by using Kubeval"
 author: "makocchi-git"
 inputs: 

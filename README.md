@@ -1,6 +1,6 @@
-# Validate Kubernetes manifests
+# Validate Kubernetes manifests by kubeval
 
-[<img src="https://github.com/makocchi-git/actions-k8s-manifests-validate/workflows/Perform checks/badge.svg"/>](https://github.com/makocchi-git/actions-k8s-manifests-validate/actions)
+[<img src="https://github.com/makocchi-git/actions-k8s-manifests-validate-kubeval/workflows/Perform checks/badge.svg"/>](https://github.com/makocchi-git/actions-k8s-manifests-validate/actions)
 
 Validate [Kubernetes](https://github.com/kubernetes/kubernetes) manifests in your repository.  
 This action uses [Kubeval](https://kubeval.instrumenta.dev/) for validating.
@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: validate manifests in dir1 and dir2
-        uses: makocchi-git/actions-k8s-manifests-validate@1.0.0
+        uses: makocchi-git/actions-k8s-manifests-validate-kubeval@1.0.0
         with:
           files: dir1,dir2
           token: ${{ secrets.GITHUB_TOKEN }}
