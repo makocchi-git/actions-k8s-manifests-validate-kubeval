@@ -43,7 +43,7 @@ if [ ${SUCCESS} -eq 0 ]; then
 fi
 
 # Make validation details for the github comment (filter "PASS" line)
-GIT_COMMENT="## ⚠ Validation Failed
+GIT_COMMENT="## ⚠ [kubeval] Validation Failed
 <details><summary><code>detail</code></summary>
 
 \`\`\`
