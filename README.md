@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: validate manifests in dir1 and dir2
-        uses: makocchi-git/actions-k8s-manifests-validate-kubeval@1.0.0
+        uses: makocchi-git/actions-k8s-manifests-validate-kubeval@v1.0.1
         with:
           files: dir1,dir2
           token: ${{ secrets.GITHUB_TOKEN }}
